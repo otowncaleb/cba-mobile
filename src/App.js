@@ -1,7 +1,11 @@
 import React from "react";
+import { StyleProvider } from "native-base";
 import { createDrawerNavigator } from "react-navigation";
 import { AccountList, ContactUs } from "./screens";
 import { Font, AppLoading } from "expo";
+
+import getTheme from "./native-base-theme/components";
+import platform from "./native-base-theme/variables/platform";
 
 const Nav = createDrawerNavigator({
   Accounts: {
@@ -29,6 +33,14 @@ export default class App extends React.Component {
   render() {
     const { loading } = this.state;
 
-    return loading ? <AppLoading /> : <Nav />;
+    if (loading) {
+      return <AppLoading />;
+    }
+
+    return (
+      <StyleProvider style={getTheme(platform)}>
+        <Nav />
+      </StyleProvider>
+    );
   }
 }
