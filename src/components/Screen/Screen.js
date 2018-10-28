@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
+import { withNavigation } from "react-navigation";
 import {
   Container,
   Content,
@@ -13,7 +14,7 @@ import {
 } from "native-base";
 import { Constants } from "expo";
 
-export default class Screen extends React.Component {
+class Screen extends React.Component {
   render() {
     const { title, children, navigation, dynamic } = this.props;
 
@@ -48,3 +49,5 @@ const styles = StyleSheet.create({
     height: Constants.statusBarHeight
   }
 });
+
+export default withNavigation(Screen);

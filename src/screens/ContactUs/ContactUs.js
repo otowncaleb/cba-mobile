@@ -9,7 +9,7 @@ export default class ContactUs extends React.Component {
 
   render() {
     return (
-      <Screen title="Contact Us" {...this.props}>
+      <Screen title="Contact Us">
         <Text>Contact Us</Text>
       </Screen>
     );

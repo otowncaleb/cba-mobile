@@ -45,7 +45,7 @@ export default class AccountList extends React.Component {
     ));
 
     return (
-      <Screen title="Accounts" {...this.props}>
+      <Screen title="Accounts">
         <Card>{listItems}</Card>
       </Screen>
     );
