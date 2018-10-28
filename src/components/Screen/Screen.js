@@ -15,24 +15,28 @@ import { Constants } from "expo";
 
 export default class Screen extends React.Component {
   render() {
+    const { title, children, navigation, dynamic } = this.props;
+
+    const navigationButton = dynamic ? (
+      <Button transparent onPress={() => navigation.goBack()}>
+        <Icon name="arrow-back" />
+      </Button>
+    ) : (
+      <Button transparent onPress={() => navigation.toggleDrawer()}>
+        <Icon name="menu" />
+      </Button>
+    );
     return (
       <Container>
         <View style={styles.statusBar} />
         <Header>
-          <Left>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.toggleDrawer()}
-            >
-              <Icon name="menu" />
-            </Button>
-          </Left>
+          <Left>{navigationButton}</Left>
           <Body>
-            <Title>{this.props.title}</Title>
+            <Title>{title}</Title>
           </Body>
           <Right />
         </Header>
-        <Content padder>{this.props.children}</Content>
+        <Content padder>{children}</Content>
       </Container>
     );
   }

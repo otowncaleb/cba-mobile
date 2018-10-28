@@ -19,9 +19,19 @@ const accounts = [
 ];
 
 export default class AccountList extends React.Component {
+  onSelectAccount = account =>
+    this.props.navigation.navigate("AccountDetails", {
+      account
+    });
+
   render() {
     const listItems = accounts.map(account => (
-      <CardItem key={account.name} bordered button>
+      <CardItem
+        key={account.name}
+        bordered
+        button
+        onPress={() => this.onSelectAccount(account)}
+      >
         <Body>
           <Text>{account.name}</Text>
         </Body>
