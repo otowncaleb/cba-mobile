@@ -1,20 +1,10 @@
 import React from "react";
 import { StyleProvider } from "native-base";
-import { createDrawerNavigator } from "react-navigation";
-import { AccountList, ContactUs } from "./screens";
 import { Font, AppLoading } from "expo";
 
-import getTheme from "./native-base-theme/components";
-import platform from "./native-base-theme/variables/platform";
-
-const Nav = createDrawerNavigator({
-  Accounts: {
-    screen: AccountList
-  },
-  "Contact Us": {
-    screen: ContactUs
-  }
-});
+import Navigation from "./Navigation";
+import getTheme from "./theme/components";
+import platform from "./theme/variables/platform";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -39,7 +29,7 @@ export default class App extends React.Component {
 
     return (
       <StyleProvider style={getTheme(platform)}>
-        <Nav />
+        <Navigation />
       </StyleProvider>
     );
   }
