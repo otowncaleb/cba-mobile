@@ -33,7 +33,7 @@ class Screen extends React.Component {
         <Header>
           <Left>{navigationButton}</Left>
           <Body>
-            <Title>{title}</Title>
+            <Title>{title || navigation.state.routeName}</Title>
           </Body>
           <Right />
         </Header>
