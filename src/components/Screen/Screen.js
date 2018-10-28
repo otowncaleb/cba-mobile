@@ -16,7 +16,7 @@ import { Constants } from "expo";
 
 class Screen extends React.Component {
   render() {
-    const { title, children, navigation, dynamic } = this.props;
+    const { title, children, navigation, dynamic, map } = this.props;
 
     const navigationButton = dynamic ? (
       <Button transparent onPress={() => navigation.goBack()}>
@@ -37,7 +37,11 @@ class Screen extends React.Component {
           </Body>
           <Right />
         </Header>
-        <Content padder>{children}</Content>
+        {map ? (
+          <View style={{ flex: 1, minHeight: 150 }}>{children}</View>
+        ) : (
+          <Content padder>{children}</Content>
+        )}
       </Container>
     );
   }
