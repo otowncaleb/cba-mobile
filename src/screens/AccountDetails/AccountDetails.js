@@ -12,7 +12,7 @@ export default class AccountDetails extends React.Component {
     const account = navigation.getParam("account");
 
     return (
-      <Screen title={account.name} dynamic>
+      <Screen dynamic>
         <Text>Balance: {account.balance}</Text>
         <Text>Transaction history</Text>
       </Screen>
