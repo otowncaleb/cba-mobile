@@ -1,16 +1,6 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import {
-  Card,
-  Body,
-  Left,
-  Right,
-  Text,
-  Icon,
-  View,
-  CardItem,
-  H3
-} from "native-base";
+import { Card, Body, Right, Text, Icon, View, CardItem, H3 } from "native-base";
 import { groupBy } from "lodash";
 import { Screen } from "../../components";
 
@@ -27,7 +17,7 @@ const accounts = [
   },
   {
     name: "Credit Card",
-    type: "Borrowing",
+    type: "Spending",
     balance: "$1,000"
   },
   {
@@ -66,9 +56,11 @@ export default class AccountList extends React.Component {
         button
         onPress={() => this.onSelectAccount(account)}
       >
-        <Left>
-          <Text style={styles.accountName}>{account.name}</Text>
-        </Left>
+        <Body>
+          <Text numberOfLines={1} style={styles.accountName}>
+            {account.name}
+          </Text>
+        </Body>
         <Right>
           <View style={styles.listItemRight}>
             <Text style={styles.balance}>{account.balance}</Text>
