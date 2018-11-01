@@ -3,29 +3,7 @@ import { StyleSheet } from "react-native";
 import { Card, Body, Right, Text, Icon, View, CardItem, H3 } from "native-base";
 import { groupBy } from "lodash";
 import { Screen } from "../../components";
-
-const accounts = [
-  {
-    name: "Chequing",
-    type: "Spending",
-    balance: "$16,000"
-  },
-  {
-    name: "Tax-Free Savings Account",
-    type: "Savings",
-    balance: "$12,000"
-  },
-  {
-    name: "Credit Card",
-    type: "Spending",
-    balance: "$1,000"
-  },
-  {
-    name: "Loan",
-    type: "Borrowing",
-    balance: "$1,250"
-  }
-];
+import { accounts } from "../../data";
 
 export default class AccountList extends React.Component {
   render() {
