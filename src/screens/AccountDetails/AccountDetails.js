@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 import { Text, Card, H2, H1, CardItem, View, Left, Right } from "native-base";
-import { Screen } from "../../components";
+import { Screen } from "app/components";
 import { TransactionList } from "./components";
 
 export default class AccountDetails extends React.Component {

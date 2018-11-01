@@ -1,6 +1,6 @@
 import React from "react";
 import { MapView } from "expo";
-import { Screen } from "../../components";
+import { Screen } from "app/components";
 
 export default class BranchLocator extends React.Component {
   render() {

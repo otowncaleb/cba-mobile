@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
-import { Screen } from "../../components";
+import { Screen } from "app/components";
 
 export default class ContactUs extends React.Component {
   render() {

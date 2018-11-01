@@ -2,8 +2,8 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { Card, Body, Right, Text, Icon, View, CardItem, H3 } from "native-base";
 import { groupBy } from "lodash";
-import { Screen } from "../../components";
-import { accounts } from "../../data";
+import { Screen } from "app/components";
+import { accounts } from "app/data";
 
 export default class AccountList extends React.Component {
   render() {
