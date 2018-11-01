@@ -1,6 +1,16 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import { Text, Card, H2, H1, CardItem, View, Left, Right } from "native-base";
+import {
+  Text,
+  Card,
+  H3,
+  H2,
+  H1,
+  CardItem,
+  View,
+  Left,
+  Right
+} from "native-base";
 import { Screen } from "app/components";
 import { TransactionList } from "./components";
 
@@ -45,7 +55,7 @@ export default class AccountDetails extends React.Component {
       <Screen title="Account Details" dynamic>
         <H1 style={styles.accountName}>{name}</H1>
         {accountOverview}
-        <H2 style={styles.transactionHistoryHeading}>Transaction history</H2>
+        <H3 style={styles.transactionHistoryHeading}>Transaction History</H3>
         {transactionHistory}
       </Screen>
     );
