@@ -43,7 +43,7 @@ export default class ContactUs extends React.Component {
                         <CardItem bordered>
                             <Body>
                             <Text style={styles.headerPadding}><Icon name='mail'/> By email</Text>
-                            <Text>We'll get back to you in under 24 hours!</Text>
+                            <Text>We will get back to you in under 24 hours!</Text>
                             <Text>Service in both languages: <Text style={styles.clickable}
                                                                    onPress={() => this.emailSupport("eraji035@uottawa.ca")}>abc@cba.ca</Text></Text>
                             </Body>
