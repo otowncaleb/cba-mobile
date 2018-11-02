@@ -3,3 +3,4 @@ node_modules/**/*
 .expo/*
 npm-debug.*
 .idea/*
+*___jb_tmp___
