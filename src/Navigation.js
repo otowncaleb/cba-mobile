@@ -10,5 +10,5 @@ export default createDrawerNavigator({
   Accounts: AccountList,
   AccountDetails,
   "Contact Us": ContactUs,
-  "Locate a Branch": BranchLocator
+  "Find a Location": BranchLocator
 });

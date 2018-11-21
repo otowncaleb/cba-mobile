@@ -10,13 +10,14 @@ import {
   Right,
   Button,
   Icon,
-  Title
+  Title,
+  Footer
 } from "native-base";
 import { Constants } from "expo";
 
 class Screen extends React.Component {
   render() {
-    const { title, children, navigation, dynamic, map } = this.props;
+    const { title, children, navigation, dynamic, map, footer } = this.props;
 
     const navigationButton = dynamic ? (
       <Button transparent onPress={() => navigation.goBack()}>
@@ -27,6 +28,7 @@ class Screen extends React.Component {
         <Icon name="menu" />
       </Button>
     );
+
     return (
       <Container>
         <View style={styles.statusBar} />
@@ -42,6 +44,7 @@ class Screen extends React.Component {
         ) : (
           <Content padder>{children}</Content>
         )}
+        {footer && <Footer>{footer}</Footer>}
       </Container>
     );
   }
