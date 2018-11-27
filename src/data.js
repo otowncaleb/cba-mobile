@@ -134,3 +134,21 @@ export const locations = [
     }
   }
 ];
+
+export const payees = [
+  {
+    id: 1,
+    name: "TEKSAVVY",
+    accountId: "132023"
+  },
+  {
+    id: 2,
+    name: "HYDRO OTTAWA",
+    accountId: "132023"
+  },
+  {
+    id: 3,
+    name: "UOTTAWA TUITION",
+    accountId: "7256131"
+  }
+];
