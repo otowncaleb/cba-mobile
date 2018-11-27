@@ -7,9 +7,11 @@ import {
   H2,
   H1,
   CardItem,
+  Body,
   View,
   Left,
-  Right
+  Right,
+  Button
 } from "native-base";
 import { Screen } from "app/components";
 import { TransactionList } from "./components";
@@ -17,6 +19,14 @@ import { TransactionList } from "./components";
 export default class AccountDetails extends React.Component {
   static navigationOptions = {
     drawerLabel: () => null
+  };
+
+  transferMoney = () => {
+    const { navigation } = this.props;
+
+    navigation.navigate("Transfer Money", {
+      accountId: navigation.getParam("account").id
+    });
   };
 
   render() {
@@ -39,6 +49,21 @@ export default class AccountDetails extends React.Component {
             </View>
           </Right>
         </CardItem>
+        <CardItem>
+          <View
+            style={{
+              marginTop: -20,
+              width: 7000,
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "flex-end"
+            }}
+          >
+            <Button onPress={this.transferMoney}>
+              <Text>Transfer money</Text>
+            </Button>
+          </View>
+        </CardItem>
       </Card>
     );
 
@@ -52,7 +77,7 @@ export default class AccountDetails extends React.Component {
       );
 
     return (
-      <Screen title="Account Details" dynamic>
+      <Screen title="Account Details" previousPage="Accounts">
         <H1 style={styles.accountName}>{name}</H1>
         {accountOverview}
         <H3 style={styles.transactionHistoryHeading}>Transaction History</H3>

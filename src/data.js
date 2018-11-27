@@ -4,6 +4,7 @@ export const accounts = [
     id: "34020219",
     type: "Spending",
     balance: "$16,000",
+    balanceAmount: 16000,
     transactions: [
       {
         id: 1,
@@ -37,23 +38,26 @@ export const accounts = [
   },
   {
     name: "Tax-Free Savings Account",
-    id: "34020219",
+    id: "34020220",
     type: "Savings",
     balance: "$12,000",
+    balanceAmount: 12000,
     transactions: []
   },
   {
     name: "Credit Card",
-    id: "34020219",
+    id: "34020221",
     type: "Spending",
     balance: "$0",
+    balanceAmount: 0,
     transactions: []
   },
   {
     name: "Loan",
-    id: "34020219",
+    id: "34020222",
     type: "Borrowing",
     balance: "$1,250",
+    balanceAmount: 1250,
     transactions: []
   }
 ];

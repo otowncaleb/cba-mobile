@@ -1,5 +1,7 @@
 import React from "react";
-import { StyleProvider } from "native-base";
+import { StyleProvider, Root } from "native-base";
+import { FormattedProvider } from "react-native-globalize";
+
 import { Font, AppLoading } from "expo";
 
 import Navigation from "./Navigation";
@@ -28,9 +30,13 @@ export default class App extends React.Component {
     }
 
     return (
-      <StyleProvider style={getTheme(platform)}>
-        <Navigation />
-      </StyleProvider>
+      <Root>
+        <StyleProvider style={getTheme(platform)}>
+          <FormattedProvider locale="en" currency="USD">
+            <Navigation />
+          </FormattedProvider>
+        </StyleProvider>
+      </Root>
     );
   }
 }
