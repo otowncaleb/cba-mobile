@@ -16,26 +16,36 @@ import { Screen } from "app/components";
 import { accounts } from "app/data";
 
 export default class AccountList extends React.Component {
-  onToastClose = reason => {
+  onToastClose = (reason, screen) => {
     if (reason === "user") {
-      this.props.navigation.navigate("Transfer Money");
+      this.props.navigation.navigate(screen);
     }
   };
 
   componentDidMount() {
     const { navigation } = this.props;
     const transferCompleted = navigation.getParam("transferCompleted");
+    const billPaymentCompleted = navigation.getParam("billPaymentCompleted");
 
     if (transferCompleted) {
       Toast.show({
-        text: "Transfer completed",
+        text: "Transfer complete",
         buttonText: "Make another",
-        onClose: this.onToastClose,
-        duration: 5000
+        onClose: reason => this.onToastClose(reason, "Transfer Money"),
+        duration: 4000
       });
+      navigation.setParams({ transferCompleted: undefined });
     }
 
-    navigation.setParams({ transferCompleted: undefined });
+    if (billPaymentCompleted) {
+      Toast.show({
+        text: "Bill payment complete",
+        buttonText: "Pay another",
+        duration: 4000,
+        onClose: reason => this.onToastClose(reason, "Pay Bill")
+      });
+      navigation.setParams({ billPaymentCompleted: undefined });
+    }
   }
 
   render() {

@@ -5,14 +5,18 @@ import {
   AccountDetails,
   BranchLocator,
   TransferMoney,
-  ConfirmTransfer
+  ConfirmTransfer,
+  PayBill,
+  ConfirmBillPayment
 } from "./screens";
 
 export default createDrawerNavigator({
   Accounts: AccountList,
-  "Transfer Money": TransferMoney,
   AccountDetails,
-  ConfirmTransfer,
   "Contact Us": ContactUs,
-  "Find a Location": BranchLocator
+  "Find a Branch": BranchLocator,
+  "Pay Bill": PayBill,
+  ConfirmBillPayment,
+  "Transfer Money": TransferMoney,
+  ConfirmTransfer
 });
