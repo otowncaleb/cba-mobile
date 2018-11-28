@@ -17,10 +17,17 @@ import { Constants } from "expo";
 
 class Screen extends React.Component {
   render() {
-    const { title, children, navigation, dynamic, map, footer } = this.props;
+    const {
+      title,
+      children,
+      navigation,
+      map,
+      previousPage,
+      footer
+    } = this.props;
 
-    const navigationButton = dynamic ? (
-      <Button transparent onPress={() => navigation.goBack()}>
+    const navigationButton = previousPage ? (
+      <Button transparent onPress={() => navigation.navigate(previousPage)}>
         <Icon name="arrow-back" />
       </Button>
     ) : (

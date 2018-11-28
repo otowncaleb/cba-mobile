@@ -1,11 +1,43 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import { Card, Body, Right, Text, Icon, View, CardItem, H3 } from "native-base";
+import {
+  Card,
+  Body,
+  Right,
+  Text,
+  Icon,
+  View,
+  CardItem,
+  H3,
+  Toast
+} from "native-base";
 import { groupBy } from "lodash";
 import { Screen } from "app/components";
 import { accounts } from "app/data";
 
 export default class AccountList extends React.Component {
+  onToastClose = reason => {
+    if (reason === "user") {
+      this.props.navigation.navigate("Transfer Money");
+    }
+  };
+
+  componentDidMount() {
+    const { navigation } = this.props;
+    const transferCompleted = navigation.getParam("transferCompleted");
+
+    if (transferCompleted) {
+      Toast.show({
+        text: "Transfer completed",
+        buttonText: "Make another",
+        onClose: this.onToastClose,
+        duration: 5000
+      });
+    }
+
+    navigation.setParams({ transferCompleted: undefined });
+  }
+
   render() {
     const accountsByType = groupBy(accounts, "type");
 

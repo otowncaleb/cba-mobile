@@ -3,12 +3,16 @@ import {
   AccountList,
   ContactUs,
   AccountDetails,
-  BranchLocator
+  BranchLocator,
+  TransferMoney,
+  ConfirmTransfer
 } from "./screens";
 
 export default createDrawerNavigator({
   Accounts: AccountList,
+  "Transfer Money": TransferMoney,
   AccountDetails,
+  ConfirmTransfer,
   "Contact Us": ContactUs,
   "Find a Location": BranchLocator
 });
