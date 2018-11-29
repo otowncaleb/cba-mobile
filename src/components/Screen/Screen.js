@@ -20,6 +20,7 @@ class Screen extends React.Component {
     const {
       title,
       children,
+      hideNavigation,
       navigation,
       map,
       previousPage,
@@ -40,7 +41,7 @@ class Screen extends React.Component {
       <Container>
         <View style={styles.statusBar} />
         <Header>
-          <Left>{navigationButton}</Left>
+          {!hideNavigation && <Left>{navigationButton}</Left>}
           <Body>
             <Title>{title || navigation.state.routeName}</Title>
           </Body>

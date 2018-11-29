@@ -6,3 +6,4 @@ export { default as TransferMoney } from "./TransferMoney";
 export { default as ConfirmTransfer } from "./ConfirmTransfer";
 export { default as PayBill } from "./PayBill";
 export { default as ConfirmBillPayment } from "./ConfirmBillPayment";
+export { default as Login } from "./Login";

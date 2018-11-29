@@ -7,10 +7,12 @@ import {
   TransferMoney,
   ConfirmTransfer,
   PayBill,
-  ConfirmBillPayment
+  ConfirmBillPayment,
+  Login
 } from "./screens";
 
 export default createDrawerNavigator({
+  Logout: Login,
   Accounts: AccountList,
   AccountDetails,
   "Contact Us": ContactUs,
