@@ -16,7 +16,7 @@ export default createDrawerNavigator({
   Accounts: AccountList,
   AccountDetails,
   "Contact Us": ContactUs,
-  "Find a Branch": BranchLocator,
+  "Find a Location": BranchLocator,
   "Pay Bill": PayBill,
   ConfirmBillPayment,
   "Transfer Money": TransferMoney,
