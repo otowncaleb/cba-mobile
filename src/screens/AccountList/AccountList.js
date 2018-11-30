@@ -32,7 +32,7 @@ export default class AccountList extends React.Component {
         text: "Transfer complete",
         buttonText: "Make another",
         onClose: reason => this.onToastClose(reason, "Transfer Money"),
-        duration: 4000
+        duration: 6000
       });
       navigation.setParams({ transferCompleted: undefined });
     }
@@ -41,7 +41,7 @@ export default class AccountList extends React.Component {
       Toast.show({
         text: "Bill payment complete",
         buttonText: "Pay another",
-        duration: 4000,
+        duration: 6000,
         onClose: reason => this.onToastClose(reason, "Pay Bill")
       });
       navigation.setParams({ billPaymentCompleted: undefined });
